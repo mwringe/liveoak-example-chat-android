@@ -1,14 +1,14 @@
 {
-    liveoak-url: "http://liveoak-rhmwringe.rhcloud.com/",
+    liveoak-url: "INSERT YOUR LIVEOAK URL HERE",
     application-name: "chat-html",
 
     push: {
         resource-name: "push",
         ups-configuration: {
-                ups-url: "https://aerogear-rhmwringe.rhcloud.com/ag-push/",
-                variant-id: "7892ae35-fa27-4507-9c86-15f80a04849e",
-                variant-secret: "1d4eb04c-fdde-45be-8116-134696a441e2",
-                gcm-sender-id: ["45721188526"]
+                ups-url: "INSERT THE URL TO THE UPS SERVER HERE",
+                variant-id: "INSERT YOUR VARIANT ID HERE",
+                variant-secret: "INSERT YOUR VARIANT SECRET HERE",
+                gcm-sender-id: ["INSERT YOUR GCM SENDER ID HERE"]
         }
     }
 }
