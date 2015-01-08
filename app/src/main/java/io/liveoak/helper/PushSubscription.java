@@ -42,10 +42,7 @@ public class PushSubscription {
             jsonObject.put("resource-path", resourcePath);
             jsonObject.put("message", message);
 
-            JSONArray aliasArray = new JSONArray();
-            aliasArray.put(alias);
-
-            jsonObject.put("alias", aliasArray);
+            jsonObject.put("alias", alias);
         } catch (Exception e) {
             Log.e(logTag, "Error trying to create subscribe json object", e);
             throw new RuntimeException(e);

@@ -107,12 +107,14 @@ public class SubmitFragment extends Fragment implements View.OnClickListener, Te
 
     @Override
     public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-        if (networkAvailable && messageEditText.getText() != null && messageEditText.getText().length() > 0) {
-            sendChat();
-        } else if (!networkAvailable){
-            Toast.makeText(this.getActivity(), getString(R.string.submit_fragment_network_required), Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this.getActivity(), getString(R.string.submit_fragment_content_required), Toast.LENGTH_SHORT).show();
+        if (event.getAction() == KeyEvent.ACTION_UP) {
+            if (networkAvailable && messageEditText.getText() != null && messageEditText.getText().length() > 0) {
+                sendChat();
+            } else if (!networkAvailable) {
+                Toast.makeText(this.getActivity(), getString(R.string.submit_fragment_network_required), Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this.getActivity(), getString(R.string.submit_fragment_content_required), Toast.LENGTH_SHORT).show();
+            }
         }
         return true;
     }

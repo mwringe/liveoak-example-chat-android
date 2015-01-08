@@ -51,7 +51,7 @@ public class LiveOakPush {
         final SharedPreferences preferences = liveOak.getPreferences();
         alias = preferences.getString("alias", null);
 
-        Toast.makeText(liveOak.getContext(), "ALIAS : " + alias, Toast.LENGTH_LONG).show();
+        //Toast.makeText(liveOak.getContext(), "ALIAS : " + alias, Toast.LENGTH_LONG).show();
         //TODO: handle the situation where the alias exists in the preferences, but for some reason is deleted on LiveOak
         // eg: if alias exists locally but not on liveoak, then have liveoak generate a new local alias
 
@@ -63,7 +63,7 @@ public class LiveOakPush {
     }
 
     public void subscribe(String resourcePath, JSONObject message, Callback<JSONObject> callback) {
-        PushSubscription subscription = new PushSubscription(liveOak, resourceName, resourcePath, message, alias,Base64.encodeToString("resourcePath".getBytes(), Base64.DEFAULT) );
+        PushSubscription subscription = new PushSubscription(liveOak, resourceName, resourcePath, message, alias, Base64.encodeToString("resourcePath".getBytes(), Base64.DEFAULT) );
         subscriptions.put(resourcePath, subscription);
         subscription.subscribe(callback);
     }
